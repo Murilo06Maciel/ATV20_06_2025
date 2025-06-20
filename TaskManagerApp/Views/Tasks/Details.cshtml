@@ -1,0 +1,20 @@
+<h1>Tarefa: @Model.Title</h1>
+
+<div>
+    <strong>Descrição:</strong>
+    <p>@Model.Description</p>
+</div>
+
+<div>
+    <strong>Data de Vencimento:</strong>
+    <p>@Model.DueDate.ToString("dd/MM/yyyy")</p>
+</div>
+
+<div>
+    <strong>Status:</strong>
+    <p>@(Model.IsCompleted ? "Concluída" : "Pendente")</p>
+</div>
+
+<a href="@Url.Action("Edit", "Tasks", new { id = Model.Id })">Editar</a> |
+<a href="@Url.Action("Delete", "Tasks", new { id = Model.Id })">Excluir</a> |
+<a href="@Url.Action("Index", "Tasks")">Voltar para a lista</a>
